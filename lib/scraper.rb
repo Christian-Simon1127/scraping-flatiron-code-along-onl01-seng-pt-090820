@@ -28,12 +28,12 @@ class Scraper
     #doc.css(".post").first.css("h2").text
     #doc.css(".post").fist.css(".date").text
     #doc.css("post").first.css("p").text
-    
-    
-    
-    
-    
-    
+    get_page.css("post").each {|post|
+      course = Course.new 
+      course.title = post.css("h2").text
+      course.schedule = post.css(".date").text 
+      course.description = post.css("p").text
+    }
     
   end  
 end
