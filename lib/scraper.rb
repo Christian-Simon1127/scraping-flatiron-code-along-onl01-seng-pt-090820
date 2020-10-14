@@ -28,7 +28,7 @@ class Scraper
     #doc.css(".post").first.css("h2").text
     #doc.css(".post").fist.css(".date").text
     #doc.css("post").first.css("p").text
-    get_page.css("post").each {|page|
+    self.get_courses.each {|page|
       course = Course.new 
       course.title = page.css("h2").text
       course.schedule = page.css(".date").text 
